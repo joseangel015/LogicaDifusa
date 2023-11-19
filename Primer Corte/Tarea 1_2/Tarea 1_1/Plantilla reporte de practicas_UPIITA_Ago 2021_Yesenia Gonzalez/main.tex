@@ -1,0 +1,158 @@
+\documentclass{article}
+
+% If you're new to LaTeX, here's some short tutorials:
+% https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes
+% https://en.wikibooks.org/wiki/LaTeX/Basics
+
+% Formatting
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage[titletoc,title]{appendix}
+
+% Math
+% https://www.overleaf.com/learn/latex/Mathematical_expressions
+% https://en.wikibooks.org/wiki/LaTeX/Mathematics
+\usepackage{amsmath,amsfonts,amssymb,mathtools}
+
+% Images
+% https://www.overleaf.com/learn/latex/Inserting_Images
+% https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions
+\usepackage{graphicx,float}
+
+% Tables
+% https://www.overleaf.com/learn/latex/Tables
+% https://en.wikibooks.org/wiki/LaTeX/Tables
+
+% Algorithms
+% https://www.overleaf.com/learn/latex/algorithms
+% https://en.wikibooks.org/wiki/LaTeX/Algorithms
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{algorithmic}
+
+% Code syntax highlighting
+% https://www.overleaf.com/learn/latex/Code_Highlighting_with_minted
+\usepackage{minted}
+\usemintedstyle{borland}
+
+% References
+% https://www.overleaf.com/learn/latex/Bibliography_management_in_LaTeX
+% https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management
+\usepackage{biblatex}
+\addbibresource{references.bib}
+\usepackage[spanish]{babel} %Texto en español
+
+\begin{document}
+
+\begin{minipage}{0.48\textwidth} \begin{flushleft}
+\includegraphics[scale = 0.5]{figuras/UPIITA_logo color}
+\end{flushleft}\end{minipage}
+\begin{minipage}{0.48\textwidth} \begin{flushright}
+\includegraphics[scale = 0.3]{figuras/IPN}
+\end{flushright}\end{minipage}
+
+%\maketitle
+\begin{center}
+    {\LARGE Unidad Profesional Interdisciplinaria en \\Ingeniería y Tecnologías Avanzadas}
+\end{center}
+
+\begin{center}
+    \Large{\textbf{Departamental XX}} % Inserte número de departamental
+    \vspace{2mm}
+\end{center}
+\begin{center}
+    \Large{\textbf{Número de práctica}} % Inserte número de práctica
+    \vspace{2mm}
+\end{center}
+    Nombre completo:
+    \vspace{2mm} 
+    
+    \large{\textbf{Nombres y apellidos}} % (en negritas)
+    \vspace{2mm}
+    
+    3BMX/2TMX - Lógica Difusa/Control Neurodifuso % Clave y nombre de la materia
+    \vspace{2mm} 
+    
+    Profesora: Dra. Yesenia Eleonor González Navarro % Nombre de la profesora
+    \vspace{1mm}
+    
+    Academia de Sistemas % Academia
+    \vspace{1mm} 
+     
+    \today
+
+
+\tableofcontents 
+\newpage
+
+\section{Introducción} % Introducción
+Mencione los temas y prácticas a reportar. Recuerde cuidar ortografía.
+
+\subsection{Título de subsección} % Ejemplo de subsección
+Si lo considera necesario puede usar subsecciones.
+
+\subsubsection{Título de subsubsección} % Ejemplo de subsección
+Si lo considera necesario puede usar subsubsecciones.
+
+
+\section{Marco Teórico} %  Marco teórico
+Agregue los fundamentos teóricos referentes a los temas a reportar. Por ejemplo: Como se describe en \cite{Hagan_2014}, la regla de aprendizaje Perceptron indica que el valor de peso de la iteración actual $\hat{w}$(k), dependerá del valor de peso de la iteración anterior $\hat{w}$(k-1), el error e y el patrón de entrada al sistema $\hat{p}$. 
+
+\begin{equation}
+    \hat{w}(k) = \hat{w}(k-1) + e*\hat{p}
+    \label{eqn:perceptron_w}
+\end{equation}
+Es posible referenciar ecuaciones, figuras, tablas, algoritmos y códigos de esta manera: Ecuación~\ref{eqn:perceptron_w}, etc.
+
+\section{Desarrollo} % Desarrollo
+Agregue el desarrollo de su práctica aquí. Para incluir una listado puede usar \textit{lo siguiente}:
+
+\begin{enumerate}
+    \item Ejercicio 1.
+    \item Ejercicio 2.
+    \item Ejercicio 3.
+\end{enumerate}
+
+\section{Resultados} % Resultados
+Agregue los resultados en esta sección. Ver Tabla~\ref{tab:redes} \cite{Haykin99a}. En la mayoría de los ejercicios y prácticas a realizar será muy importante describir los resultados obtenidos a partir del análisis de gráficas resultantes.  para conocer cómo puede incluir una tabla en el documento. En esta sección también se muestra cómo incluir una Figura~\ref{fig:logoIPN}. Para las figuras, no olvide describir las variables de cada eje, sus unidades. Considere agregar una rejilla para una mejor ubicación de las distribuciones de datos. Si presenta una gráfica con varias curvas, agregue etiquetas o leyendas para identificar a cada una de ellas.
+
+\begin{table}[h] % h=here, t=top, b=bottom
+\caption{Tipos de redes de una sola capa.}
+    \centering
+    \begin{tabular}{rll}
+    & Nombre & Función de activación \\
+    \hline
+    1 & Perceptron & Escalón  \\
+    2 & Adaline & Lineal \\
+    3 & Hebb & Lineal \\
+    \end{tabular}
+    \label{tab:redes}
+\end{table}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.15\linewidth]{figuras/IPN.jpg}
+    \caption{Logotipo del IPN.}
+    \label{fig:logoIPN}
+\end{figure}
+
+\section{Conclusiones} % Conclusiones
+Pueden agregar conclusiones individuales o en equipo. Las conclusiones son la reflexión final, expresada de forma clara y consisa. Los juicios emitidos deben estar sustentados por datos o medidas cuantitativas.
+
+\printbibliography % Referencias
+
+\begin{appendices} % Apéndices
+
+\section{Códigos en Python} % Códigos Python
+Agregue los códigos de Python aquí. Se recomienda comentar códigos para describir de forma breve el porqué de sus etapas.
+
+\begin{listing}[h]
+\inputminted{python}{ejemplo.py}
+\caption{Ejemplo de código en Python.}
+\label{listing:ejemplo}
+
+\end{listing}
+
+\end{appendices}
+
+\end{document}
+ 

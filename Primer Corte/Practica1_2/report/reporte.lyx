@@ -1,0 +1,3576 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{pythonhighlight}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish-mexico
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.54cm
+\topmargin 2.54cm
+\rightmargin 2.54cm
+\bottommargin 2.54cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style plain
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{titlepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size largest
+PRÁCTICA 1.2: EJERCICIO 
+\begin_inset Quotes qld
+\end_inset
+
+VELETA Y GENERADOR
+\begin_inset Quotes qrd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.2cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/logo_ipn.png
+	width 11cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset VSpace 0.2cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+Ingeniería Telemática
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+\begin_inset VSpace 0.8cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+\bar under
+Lógica Difusa
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+\begin_inset VSpace 0.8cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size larger
+Abarca Romero José Ángel
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+Profesora
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+Gonzalez Navarro Yesenia Eleon
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+2TM9
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{titlepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Objetivo
+\end_layout
+
+\begin_layout Enumerate
+Implemente en Python un sistema de inferencia de tipo Mamdani para el problema
+ del archivo proporcionado.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Un código que genere las gráficas de los universos de entrada y salida caracteri
+zados, los conjuntos de salida recortados, la curva resultante de unir los
+ conjuntos de salida recortados y los valores desdifusificados de las variables
+ de salida Z*.
+\end_layout
+
+\begin_layout Enumerate
+Un código que genere las superficies de control para las variables de salida.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Marco Teórico
+\end_layout
+
+\begin_layout Subsection
+Sistemas de Inferencia de Tipo Mamdani 
+\end_layout
+
+\begin_layout Standard
+Estos sistemas de inferencia utilizan universos difusos tanto en su entrada
+ como en su salida.
+ Existen diversos métodos de desdifusificación entre los cuales se encuentran:
+ izquierda del máximo, media del máximo, derecha del máximo, bicéctriz,
+ promedio de pesos y centroide del área.
+ El método del centroide del área resulta ser el de menor complejidad de
+ todos y aún así se obtienen resultados lo suficientemente aproximados a
+ otros métodos para considerarlo correcto.
+ Su ecuación se muestra a continuación
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+z^{*} & =\frac{\sum\mu_{CT}\left(z\right)\cdot z}{\sum\mu_{CT}\left(z\right)}\label{eq:1}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+donde 
+\begin_inset Formula $z^{*}$
+\end_inset
+
+ es el valor certero desdifusificado, que resulta de evaluar cada elemento
+ 
+\begin_inset Formula $z$
+\end_inset
+
+ del universo de salida ponderado por su pertenencia en el conjunto de salida
+ CT.
+\end_layout
+
+\begin_layout Section
+Desarrollo
+\end_layout
+
+\begin_layout Subsection
+Caracterización de los universos de entrada
+\end_layout
+
+\begin_layout Standard
+En el archivo proporcionado por la profesora, se plantean los nombres para
+ cada uno de los conjuntos pertenecientes a los universos difusos de entrada.
+ Sin embargo, estos carecen de rangos, por lo tanto, me di a la tarea primero
+ de asignarles rangos a cada uno de los conjuntos.
+ Es necesario destacar que si bien ambas variables de entrada utilizan los
+ mismos conjuntos, estos no comparten dependencia entre sí.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/r1.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Universo de Entrada 1: Posición del generador en grados (0-359°).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/r2.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Universo de Entrada 2: Posición de la veleta en grados (0-359°).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Variables de entrada al sistema.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Caracterización de los universos de salida
+\end_layout
+
+\begin_layout Standard
+Los universos de salida están definidos en rangos totalmente distintos a
+ los universos de entrada.
+ Comparten entre ellos que cada uno posee 3 conjuntos definidos dentro de
+ sí.
+ De igual forma que para los universos de entrada, los rangos de cada uno
+ de estos conjuntos los definí yo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/r3.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Universo de Salida 1: Velocidad de giro del generador (Hz).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/r4.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Universo de Salida 2: Sentido de giro del generador.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Variables de salida del sistema
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig2"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Tablas de inferencia hacia los conjuntos de salida
+\end_layout
+
+\begin_layout Standard
+Las tablas de inferencia son las que determinan las reglas 
+\begin_inset Quotes qld
+\end_inset
+
+si - entonces
+\begin_inset Quotes qrd
+\end_inset
+
+.
+ A continuación presento las tablas de inferencia proporcionadas dentro
+ del archivo de instrucciones de la práctica.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Posición Veleta / Posición Generador
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{NorteE}_{G}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{Este}_{G}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{Sur}_{G}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{Oeste}_{G}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{NorteO}_{G}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{NorteE}_{V}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color teal
+Baja
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Media
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+Alta
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Media
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color teal
+Baja
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{Este}_{V}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Media
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color teal
+Baja
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Media
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+Alta
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Media
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{Sur}_{V}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+Alta
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Media
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color teal
+Baja
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Media
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+Alta
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{Oeste}_{V}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Media
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+Alta
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Media
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color teal
+Baja
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Media
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{NorteO}_{V}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color teal
+Baja
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Media
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+Alta
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Media
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color teal
+Baja
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de inferencia hacia Velocidad de giro.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:tabla1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Posición Veleta / Posición Generador
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{NorteE}_{G}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{Este}_{G}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{Sur}_{G}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{Oeste}_{G}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{NorteO}_{G}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{NorteE}_{V}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color teal
+No mover
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Anti horario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Anti horario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+Horario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color teal
+No mover
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{Este}_{V}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+Horario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color teal
+No mover
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Anti horario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+Horario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+Horario
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{Sur}_{V}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+Horario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+Horario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color teal
+No mover
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Anti horario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Anti horario
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{Oeste}_{V}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Anti horario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Anti horario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+Horario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color teal
+No mover
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Anti horario
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\text{NorteO}_{V}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color teal
+No mover
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Anti horario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+Horario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+Horario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color teal
+No mover
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de inferencia hacia Sentido de giro.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:tabla2"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En base a las tablas de inferencia anteriormente mostradas, se tienen 50
+ reglas 
+\begin_inset Quotes qld
+\end_inset
+
+si - entonces
+\begin_inset Quotes qrd
+\end_inset
+
+ en total (25 por cada tabla).
+\end_layout
+
+\begin_layout Subsection
+Programación del sistema de inferencia en Python
+\end_layout
+
+\begin_layout Standard
+Con base a las reglas 
+\begin_inset Quotes qld
+\end_inset
+
+si - entonces
+\begin_inset Quotes qrd
+\end_inset
+
+ generadas para las tablas de inferencia 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:tabla1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:tabla2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, diseñé un programa que me permite difusificar dos números certeros y desdifusi
+ficar dos variables de salida para obtener valores numéricos certeros a
+ partir del uso de un sistema de inferencia de tipo Mamdani.
+ A continuación muestro las gráficas correspondientes al proceso de desdifusific
+ación de un valor difuso para cada uno de los universos de salida a partir
+ de dos valores de entrada 
+\begin_inset Formula $x=135$
+\end_inset
+
+ y 
+\begin_inset Formula $y=315$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/r5.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Cortes en los conjuntos del universo de salida 
+\begin_inset Quotes qld
+\end_inset
+
+Velocidad de giro
+\begin_inset Quotes qrd
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig5"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/r7.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Unión de los conjuntos recortados 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/r6.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Cortes a los conjuntos del universo de salida 
+\begin_inset Quotes qld
+\end_inset
+
+Sentido de giro
+\begin_inset Quotes qrd
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig6"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/r8.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Unión de los conjuntos recortados
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/r9.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de inferencia y valores desfusificados para 
+\begin_inset Formula $x=135$
+\end_inset
+
+ y 
+\begin_inset Formula $y=315$
+\end_inset
+
+ .
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig7"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+En la siguiente sección muestro las superficies de control obtenidas.
+\end_layout
+
+\begin_layout Section
+Resultados
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/r10.png
+	width 9cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Superficie de control para 
+\begin_inset Quotes qld
+\end_inset
+
+Velocidad de giro
+\begin_inset Quotes qrd
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig8"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/r11.png
+	width 9cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Superficie de control para 
+\begin_inset Quotes qld
+\end_inset
+
+Sentido de giro
+\begin_inset Quotes qrd
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig9"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conclusiones
+\end_layout
+
+\begin_layout Standard
+Al observar las figuras 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig8"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig9"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ se puede ver cierta similitud entre ambas superficies de control.
+ Esto ocurre debido a que en ambas variables de salida tenemos 3 conjuntos.
+ Sin embargo, las reglas 
+\begin_inset Quotes qld
+\end_inset
+
+si - entonces
+\begin_inset Quotes qrd
+\end_inset
+
+ aunadas al rango en el que están definidas las variables afectan la forma
+ de las superficies.
+ He de resaltar que estas superficies las obtuve después de detectar un
+ error en el uso que le di a la función 
+\shape italic
+np.maximum()
+\shape default
+, pues quise realizar la comparación de 3 conjuntos siendo que la función
+ solo permite la comparación de 2 conjuntos a la vez como máximo.
+ Una vez corregido este error, obtuve los resultados de desdifusificación
+ correctos así como las superficies de control esperadas.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Apéndices
+\end_layout
+
+\begin_layout Subsection*
+Código para la generación de gráficas de los conjuntos de entrada y salida
+ caracterizados {graficas.py}
+\end_layout
+
+\begin_layout Standard
+import numpy as np
+\end_layout
+
+\begin_layout Standard
+import matplotlib.pyplot as plt 
+\end_layout
+
+\begin_layout Standard
+x = np.arange(0, 359, 1) 
+\end_layout
+
+\begin_layout Standard
+y = np.arange(0, 359, 1) 
+\end_layout
+
+\begin_layout Standard
+z1 = np.arange(0, 600, 1)
+\end_layout
+
+\begin_layout Standard
+z2 = np.arange(0, 2, 0.01)
+\end_layout
+
+\begin_layout Standard
+#Posición del generador
+\end_layout
+
+\begin_layout Standard
+A1 = np.zeros(len(x)) #Norte EG
+\end_layout
+
+\begin_layout Standard
+A2 = np.zeros(len(x)) #Este G
+\end_layout
+
+\begin_layout Standard
+A3 = np.zeros(len(x)) #Sur G
+\end_layout
+
+\begin_layout Standard
+A4 = np.zeros(len(x)) #Oeste G
+\end_layout
+
+\begin_layout Standard
+A5 = np.zeros(len(x)) #Norte OG
+\end_layout
+
+\begin_layout Standard
+#Posición de la veleta
+\end_layout
+
+\begin_layout Standard
+B1 = np.zeros(len(y)) #Norte EG
+\end_layout
+
+\begin_layout Standard
+B2 = np.zeros(len(y)) #Este G
+\end_layout
+
+\begin_layout Standard
+B3 = np.zeros(len(y)) #Sur G
+\end_layout
+
+\begin_layout Standard
+B4 = np.zeros(len(y)) #Oeste G
+\end_layout
+
+\begin_layout Standard
+B5 = np.zeros(len(y)) #Norte OG
+\end_layout
+
+\begin_layout Standard
+#Velocidad de giro
+\end_layout
+
+\begin_layout Standard
+C1 = np.zeros(len(z1)) #Baja
+\end_layout
+
+\begin_layout Standard
+C2 = np.zeros(len(z1)) #Media
+\end_layout
+
+\begin_layout Standard
+C3 = np.zeros(len(z1)) #Alta
+\end_layout
+
+\begin_layout Standard
+#Sentido de giro
+\end_layout
+
+\begin_layout Standard
+D1 = np.zeros(len(z2)) #0
+\end_layout
+
+\begin_layout Standard
+D2 = np.zeros(len(z2)) #1
+\end_layout
+
+\begin_layout Standard
+D3 = np.zeros(len(z2)) #2
+\end_layout
+
+\begin_layout Standard
+def funcionTrapezoidal(a,b,c,d,C,r):
+\end_layout
+
+\begin_layout Standard
+for i in range(len(r)):
+\end_layout
+
+\begin_layout Standard
+if i <= a:
+\end_layout
+
+\begin_layout Standard
+C[i] = 0
+\end_layout
+
+\begin_layout Standard
+elif a < i and i <= b:
+\end_layout
+
+\begin_layout Standard
+C[i] = (i - a)/(b - a)
+\end_layout
+
+\begin_layout Standard
+elif b < i and i <= c:
+\end_layout
+
+\begin_layout Standard
+C[i] = 1
+\end_layout
+
+\begin_layout Standard
+elif c < i and i <= d:
+\end_layout
+
+\begin_layout Standard
+C[i] = (d - i)/(d - c)
+\end_layout
+
+\begin_layout Standard
+elif d < i:
+\end_layout
+
+\begin_layout Standard
+C[i] = 0
+\end_layout
+
+\begin_layout Standard
+return C
+\end_layout
+
+\begin_layout Standard
+#Generación de los conjuntos difusos
+\end_layout
+
+\begin_layout Standard
+#Posición del generador
+\end_layout
+
+\begin_layout Standard
+A1 = funcionTrapezoidal(-1,-1,30,60,A1,x)
+\end_layout
+
+\begin_layout Standard
+A2 = funcionTrapezoidal(30,60,120,150,A2,x)
+\end_layout
+
+\begin_layout Standard
+A3 = funcionTrapezoidal(120,150,210,240,A3,x)
+\end_layout
+
+\begin_layout Standard
+A4 = funcionTrapezoidal(210,240,300,330,A4,x)
+\end_layout
+
+\begin_layout Standard
+A5 = funcionTrapezoidal(300,330,359,359,A5,x)
+\end_layout
+
+\begin_layout Standard
+plt.figure(1)
+\end_layout
+
+\begin_layout Standard
+plt.plot(x,A1,label = "Norte EG")
+\end_layout
+
+\begin_layout Standard
+plt.plot(x,A2,label = "Este G")
+\end_layout
+
+\begin_layout Standard
+plt.plot(x,A3,label = "Sur EG")
+\end_layout
+
+\begin_layout Standard
+plt.plot(x,A4,label = "Oeste G")
+\end_layout
+
+\begin_layout Standard
+plt.plot(x,A5,label = "Norte OG")
+\end_layout
+
+\begin_layout Standard
+plt.legend()
+\end_layout
+
+\begin_layout Standard
+plt.xlabel("Posición del Generador")
+\end_layout
+
+\begin_layout Standard
+plt.ylabel("Membresía")
+\end_layout
+
+\begin_layout Standard
+#Posición de la veleta
+\end_layout
+
+\begin_layout Standard
+B1 = funcionTrapezoidal(-1,-1,30,60,B1,y)
+\end_layout
+
+\begin_layout Standard
+B2 = funcionTrapezoidal(30,60,120,150,B2,y)
+\end_layout
+
+\begin_layout Standard
+B3 = funcionTrapezoidal(120,150,210,240,B3,y)
+\end_layout
+
+\begin_layout Standard
+B4 = funcionTrapezoidal(210,240,300,330,B4,y)
+\end_layout
+
+\begin_layout Standard
+B5 = funcionTrapezoidal(300,330,359,359,B5,y)
+\end_layout
+
+\begin_layout Standard
+plt.figure(2)
+\end_layout
+
+\begin_layout Standard
+plt.plot(y,B1,label = "Norte EG")
+\end_layout
+
+\begin_layout Standard
+plt.plot(y,B2,label = "Este G")
+\end_layout
+
+\begin_layout Standard
+plt.plot(y,B3,label = "Sur EG")
+\end_layout
+
+\begin_layout Standard
+plt.plot(y,B4,label = "Oeste G")
+\end_layout
+
+\begin_layout Standard
+plt.plot(y,B5,label = "Norte OG")
+\end_layout
+
+\begin_layout Standard
+plt.legend()
+\end_layout
+
+\begin_layout Standard
+plt.xlabel("Posición de la Veleta")
+\end_layout
+
+\begin_layout Standard
+plt.ylabel("Membresía")
+\end_layout
+
+\begin_layout Standard
+#Velocidad de giro
+\end_layout
+
+\begin_layout Standard
+C1 = funcionTrapezoidal(-1,-1,100,200,C1,z1)
+\end_layout
+
+\begin_layout Standard
+C2 = funcionTrapezoidal(100,200,400,500,C2,z1)
+\end_layout
+
+\begin_layout Standard
+C3 = funcionTrapezoidal(400,500,600,600,C3,z1)
+\end_layout
+
+\begin_layout Standard
+plt.figure(3)
+\end_layout
+
+\begin_layout Standard
+plt.plot(z1,C1,label = "Baja")
+\end_layout
+
+\begin_layout Standard
+plt.plot(z1,C2,label = "Media")
+\end_layout
+
+\begin_layout Standard
+plt.plot(z1,C3,label = "Alta")
+\end_layout
+
+\begin_layout Standard
+plt.legend()
+\end_layout
+
+\begin_layout Standard
+plt.xlabel("Velocidad [Hz]")
+\end_layout
+
+\begin_layout Standard
+plt.ylabel("Membresía")
+\end_layout
+
+\begin_layout Standard
+#Sentido de giro
+\end_layout
+
+\begin_layout Standard
+D1 = funcionTrapezoidal(-1*100,-1*100,0.5*100,0.9*100,D1,z2)
+\end_layout
+
+\begin_layout Standard
+D2 = funcionTrapezoidal(0.5*100,0.9*100,1.1*100,1.5*100,D2,z2)
+\end_layout
+
+\begin_layout Standard
+D3 = funcionTrapezoidal(1.1*100,1.5*100,2*100,2*100,D3,z2)
+\end_layout
+
+\begin_layout Standard
+plt.figure(4)
+\end_layout
+
+\begin_layout Standard
+plt.plot(z2,D1,label = "Antihorario")
+\end_layout
+
+\begin_layout Standard
+plt.plot(z2,D2,label = "No mover")
+\end_layout
+
+\begin_layout Standard
+plt.plot(z2,D3,label = "Horario")
+\end_layout
+
+\begin_layout Standard
+plt.legend()
+\end_layout
+
+\begin_layout Standard
+plt.xlabel("Sentido de Giro")
+\end_layout
+
+\begin_layout Standard
+plt.ylabel("Membresía")
+\end_layout
+
+\begin_layout Standard
+#Obtención de los grados de pertenencia a los conjuntos de los universos
+ de entrada
+\end_layout
+
+\begin_layout Standard
+valx = int(input("Ingrese el valor de la posición del generador(0-359):
+ "))
+\end_layout
+
+\begin_layout Standard
+memA = [A1[valx],A2[valx],A3[valx],A4[valx],A5[valx]]
+\end_layout
+
+\begin_layout Standard
+valy = int(input("Ingrese el valor de la veleta (0-359): "))
+\end_layout
+
+\begin_layout Standard
+memB = [B1[valy],B2[valy],B3[valy],B4[valy],B5[valy]]
+\end_layout
+
+\begin_layout Standard
+#Composición max - min (Evaluación de las reglas "si-entonces")
+\end_layout
+
+\begin_layout Standard
+#Tablas de inferencia (intersección - min)
+\end_layout
+
+\begin_layout Standard
+tabla = [[np.minimum(memA[0],memB[0]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[1],memB[0]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[2],memB[0]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[3],memB[0]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[4],memB[0])],
+\end_layout
+
+\begin_layout Standard
+[np.minimum(memA[0],memB[1]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[1],memB[1]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[2],memB[1]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[3],memB[1]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[4],memB[1])],
+\end_layout
+
+\begin_layout Standard
+[np.minimum(memA[0],memB[2]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[1],memB[2]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[2],memB[2]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[3],memB[2]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[4],memB[2])],
+\end_layout
+
+\begin_layout Standard
+[np.minimum(memA[0],memB[3]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[1],memB[3]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[2],memB[3]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[3],memB[3]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[4],memB[3])],
+\end_layout
+
+\begin_layout Standard
+[np.minimum(memA[0],memB[4]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[1],memB[4]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[2],memB[4]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[3],memB[4])
+\end_layout
+
+\begin_layout Standard
+,np.minimum(memA[4],memB[4])]] 
+\end_layout
+
+\begin_layout Standard
+print("Tabla de inferencia: ",str(tabla))
+\end_layout
+
+\begin_layout Standard
+#Agregación - max hacia Velocidad de giro
+\end_layout
+
+\begin_layout Standard
+agregacionC1 = max(tabla[0][0],max(tabla[1][1],
+\end_layout
+
+\begin_layout Standard
+max(tabla[2][2],
+\end_layout
+
+\begin_layout Standard
+max(tabla[3][3],max(tabla[4][4],
+\end_layout
+
+\begin_layout Standard
+max(tabla[4][0],tabla[0][4])))))) #Baja
+\end_layout
+
+\begin_layout Standard
+agregacionC2 = max(tabla[0][1],max(tabla[0][3],
+\end_layout
+
+\begin_layout Standard
+max(tabla[1][0],
+\end_layout
+
+\begin_layout Standard
+max(tabla[1][2],max(tabla[1][4],
+\end_layout
+
+\begin_layout Standard
+max(tabla[2][1],
+\end_layout
+
+\begin_layout Standard
+max(tabla[2][3],max(tabla[3][0],
+\end_layout
+
+\begin_layout Standard
+max(tabla[3][2],
+\end_layout
+
+\begin_layout Standard
+max(tabla[3][4],max(tabla[4][1],
+\end_layout
+
+\begin_layout Standard
+tabla[4][3]))))))))))) #Media
+\end_layout
+
+\begin_layout Standard
+agregacionC3 = max(tabla[0][2],max(tabla[1][3],
+\end_layout
+
+\begin_layout Standard
+max(tabla[2][0],
+\end_layout
+
+\begin_layout Standard
+max(tabla[2][4],max(tabla[3][1],
+\end_layout
+
+\begin_layout Standard
+tabla[4][2]))))) #Alta 
+\end_layout
+
+\begin_layout Standard
+#Agregación - max hacia Sentido de giro
+\end_layout
+
+\begin_layout Standard
+agregacionD1 = max(tabla[0][0],max(tabla[1][1],
+\end_layout
+
+\begin_layout Standard
+max(tabla[2][2],max(tabla[3][3],max(tabla[4][4],
+\end_layout
+
+\begin_layout Standard
+max(tabla[4][0],tabla[0][4])))))) #Baja
+\end_layout
+
+\begin_layout Standard
+agregacionD2 = max(tabla[0][1],max(tabla[0][2],
+\end_layout
+
+\begin_layout Standard
+max(tabla[1][2],max(tabla[2][3],max(tabla[2][4],
+\end_layout
+
+\begin_layout Standard
+max(tabla[3][0],max(tabla[3][1],
+\end_layout
+
+\begin_layout Standard
+max(tabla[3][4],tabla[4][1])))))))) #Media
+\end_layout
+
+\begin_layout Standard
+agregacionD3 = max(tabla[0][3],max(tabla[1][0],
+\end_layout
+
+\begin_layout Standard
+max(tabla[1][3],max(tabla[1][4],max(tabla[2][0],
+\end_layout
+
+\begin_layout Standard
+max(tabla[2][1],max(tabla[3][2],
+\end_layout
+
+\begin_layout Standard
+max(tabla[4][2],tabla[4][3])))))))) #Alta
+\end_layout
+
+\begin_layout Standard
+aux1 = agregacionC1*np.ones(len(C1))
+\end_layout
+
+\begin_layout Standard
+aux2 = agregacionC2*np.ones(len(C2))
+\end_layout
+
+\begin_layout Standard
+aux3 = agregacionC3*np.ones(len(C3))
+\end_layout
+
+\begin_layout Standard
+aux4 = agregacionD1*np.ones(len(D1))
+\end_layout
+
+\begin_layout Standard
+aux5 = agregacionD2*np.ones(len(D2))
+\end_layout
+
+\begin_layout Standard
+aux6 = agregacionD3*np.ones(len(D3))
+\end_layout
+
+\begin_layout Standard
+C1_r = np.minimum(C1,aux1)
+\end_layout
+
+\begin_layout Standard
+C2_r = np.minimum(C2,aux2)
+\end_layout
+
+\begin_layout Standard
+C3_r = np.minimum(C3,aux3)
+\end_layout
+
+\begin_layout Standard
+D1_r = np.minimum(D1,aux4)
+\end_layout
+
+\begin_layout Standard
+D2_r = np.minimum(D2,aux5)
+\end_layout
+
+\begin_layout Standard
+D3_r = np.minimum(D3,aux6)
+\end_layout
+
+\begin_layout Standard
+plt.figure(5)
+\end_layout
+
+\begin_layout Standard
+plt.plot(z1,C1,z1,C2,z1,C3)
+\end_layout
+
+\begin_layout Standard
+plt.plot(z1,C1_r,label = "C1 recortado")
+\end_layout
+
+\begin_layout Standard
+plt.plot(z1,C2_r,label = "C2 recortado")
+\end_layout
+
+\begin_layout Standard
+plt.plot(z1,C3_r,label = "C3 recortado")
+\end_layout
+
+\begin_layout Standard
+plt.xlabel("Velocidad [Hz]")
+\end_layout
+
+\begin_layout Standard
+plt.ylabel("Membresía")
+\end_layout
+
+\begin_layout Standard
+plt.legend()
+\end_layout
+
+\begin_layout Standard
+plt.figure(6)
+\end_layout
+
+\begin_layout Standard
+plt.plot(z2,D1,z2,D2,z2,D3)
+\end_layout
+
+\begin_layout Standard
+plt.plot(z2,D1_r,label = "D1 recortado")
+\end_layout
+
+\begin_layout Standard
+plt.plot(z2,D2_r,label = "D2 recortado")
+\end_layout
+
+\begin_layout Standard
+plt.plot(z2,D3_r,label = "D3 recortado")
+\end_layout
+
+\begin_layout Standard
+plt.xlabel("Sentido de giro")
+\end_layout
+
+\begin_layout Standard
+plt.ylabel("Membresía") 
+\end_layout
+
+\begin_layout Standard
+plt.legend()
+\end_layout
+
+\begin_layout Standard
+#Dedifusificación
+\end_layout
+
+\begin_layout Standard
+#Velocidad de Giro
+\end_layout
+
+\begin_layout Standard
+z_d = 0
+\end_layout
+
+\begin_layout Standard
+nume = 0
+\end_layout
+
+\begin_layout Standard
+deno = 0
+\end_layout
+
+\begin_layout Standard
+CT1 = np.maximum(C1_r,np.maximum(C2_r,C3_r))
+\end_layout
+
+\begin_layout Standard
+plt.figure(7)
+\end_layout
+
+\begin_layout Standard
+plt.plot(z1,CT1)
+\end_layout
+
+\begin_layout Standard
+plt.xlabel("Velocidad [Hz]")
+\end_layout
+
+\begin_layout Standard
+plt.ylabel("Membresía")
+\end_layout
+
+\begin_layout Standard
+for i in range(len(z1)):
+\end_layout
+
+\begin_layout Standard
+nume += CT1[i]*i
+\end_layout
+
+\begin_layout Standard
+deno += CT1[i]
+\end_layout
+
+\begin_layout Standard
+z_d = nume/deno
+\end_layout
+
+\begin_layout Standard
+print("z* = ", str(z_d), " [Hz]")
+\end_layout
+
+\begin_layout Standard
+#Sentido de giro
+\end_layout
+
+\begin_layout Standard
+z_d = 0
+\end_layout
+
+\begin_layout Standard
+nume = 0
+\end_layout
+
+\begin_layout Standard
+deno = 0
+\end_layout
+
+\begin_layout Standard
+CT2 = np.maximum(D1_r,np.maximum(D2_r,D3_r))
+\end_layout
+
+\begin_layout Standard
+plt.figure(8)
+\end_layout
+
+\begin_layout Standard
+plt.plot(z2,CT2)
+\end_layout
+
+\begin_layout Standard
+plt.xlabel("Sentido de giro")
+\end_layout
+
+\begin_layout Standard
+plt.ylabel("Membresía")
+\end_layout
+
+\begin_layout Standard
+for i in range(len(z2)):
+\end_layout
+
+\begin_layout Standard
+nume += CT2[i]*i/100
+\end_layout
+
+\begin_layout Standard
+deno += CT2[i]
+\end_layout
+
+\begin_layout Standard
+z_d = nume/deno
+\end_layout
+
+\begin_layout Standard
+print("z* = ", str(z_d))
+\end_layout
+
+\begin_layout Subsection*
+Código para la generación de superficies de control {3d.py}
+\end_layout
+
+\begin_layout Standard
+import numpy as np
+\end_layout
+
+\begin_layout Standard
+import matplotlib.pyplot as plt 
+\end_layout
+
+\begin_layout Standard
+from matplotlib import cm
+\end_layout
+
+\begin_layout Standard
+x = np.arange(0, 359, 1) 
+\end_layout
+
+\begin_layout Standard
+y = np.arange(0, 359, 1) 
+\end_layout
+
+\begin_layout Standard
+z1 = np.arange(0, 600, 1)
+\end_layout
+
+\begin_layout Standard
+z2 = np.arange(0, 2, 0.01)
+\end_layout
+
+\begin_layout Standard
+X, Y = np.meshgrid(x, y)
+\end_layout
+
+\begin_layout Standard
+#Posición del generador
+\end_layout
+
+\begin_layout Standard
+A1 = np.zeros(len(x)) #Norte EG
+\end_layout
+
+\begin_layout Standard
+A2 = np.zeros(len(x)) #Este G
+\end_layout
+
+\begin_layout Standard
+A3 = np.zeros(len(x)) #Sur G
+\end_layout
+
+\begin_layout Standard
+A4 = np.zeros(len(x)) #Oeste G
+\end_layout
+
+\begin_layout Standard
+A5 = np.zeros(len(x)) #Norte OG
+\end_layout
+
+\begin_layout Standard
+#Posición de la veleta
+\end_layout
+
+\begin_layout Standard
+B1 = np.zeros(len(y)) #Norte EG
+\end_layout
+
+\begin_layout Standard
+B2 = np.zeros(len(y)) #Este G
+\end_layout
+
+\begin_layout Standard
+B3 = np.zeros(len(y)) #Sur G
+\end_layout
+
+\begin_layout Standard
+B4 = np.zeros(len(y)) #Oeste G
+\end_layout
+
+\begin_layout Standard
+B5 = np.zeros(len(y)) #Norte OG
+\end_layout
+
+\begin_layout Standard
+#Velocidad de giro
+\end_layout
+
+\begin_layout Standard
+C1 = np.zeros(len(z1)) #Baja
+\end_layout
+
+\begin_layout Standard
+C2 = np.zeros(len(z1)) #Media
+\end_layout
+
+\begin_layout Standard
+C3 = np.zeros(len(z1)) #Alta
+\end_layout
+
+\begin_layout Standard
+#Sentido de giro
+\end_layout
+
+\begin_layout Standard
+D1 = np.zeros(len(z2)) #0
+\end_layout
+
+\begin_layout Standard
+D2 = np.zeros(len(z2)) #1
+\end_layout
+
+\begin_layout Standard
+D3 = np.zeros(len(z2)) #2
+\end_layout
+
+\begin_layout Standard
+def funcionTrapezoidal(a,b,c,d,C,r):
+\end_layout
+
+\begin_layout Standard
+for i in range(len(r)):
+\end_layout
+
+\begin_layout Standard
+if i <= a:
+\end_layout
+
+\begin_layout Standard
+C[i] = 0
+\end_layout
+
+\begin_layout Standard
+elif a < i and i <= b:
+\end_layout
+
+\begin_layout Standard
+C[i] = (i - a)/(b - a)
+\end_layout
+
+\begin_layout Standard
+elif b < i and i <= c:
+\end_layout
+
+\begin_layout Standard
+C[i] = 1
+\end_layout
+
+\begin_layout Standard
+elif c < i and i <= d:
+\end_layout
+
+\begin_layout Standard
+C[i] = (d - i)/(d - c)
+\end_layout
+
+\begin_layout Standard
+elif d < i:
+\end_layout
+
+\begin_layout Standard
+C[i] = 0
+\end_layout
+
+\begin_layout Standard
+return C
+\end_layout
+
+\begin_layout Standard
+#Generación de los conjuntos difusos
+\end_layout
+
+\begin_layout Standard
+#Posición del generador
+\end_layout
+
+\begin_layout Standard
+A1 = funcionTrapezoidal(-1,-1,30,60,A1,x)
+\end_layout
+
+\begin_layout Standard
+A2 = funcionTrapezoidal(30,60,120,150,A2,x)
+\end_layout
+
+\begin_layout Standard
+A3 = funcionTrapezoidal(120,150,210,240,A3,x)
+\end_layout
+
+\begin_layout Standard
+A4 = funcionTrapezoidal(210,240,300,330,A4,x)
+\end_layout
+
+\begin_layout Standard
+A5 = funcionTrapezoidal(300,330,359,359,A5,x)
+\end_layout
+
+\begin_layout Standard
+#Posición de la veleta
+\end_layout
+
+\begin_layout Standard
+B1 = funcionTrapezoidal(-1,-1,30,60,B1,y)
+\end_layout
+
+\begin_layout Standard
+B2 = funcionTrapezoidal(30,60,120,150,B2,y)
+\end_layout
+
+\begin_layout Standard
+B3 = funcionTrapezoidal(120,150,210,240,B3,y)
+\end_layout
+
+\begin_layout Standard
+B4 = funcionTrapezoidal(210,240,300,330,B4,y)
+\end_layout
+
+\begin_layout Standard
+B5 = funcionTrapezoidal(300,330,359,359,B5,y)
+\end_layout
+
+\begin_layout Standard
+#Velocidad de giro
+\end_layout
+
+\begin_layout Standard
+C1 = funcionTrapezoidal(-1,-1,170,230,C1,z1)
+\end_layout
+
+\begin_layout Standard
+C2 = funcionTrapezoidal(170,230,370,430,C2,z1)
+\end_layout
+
+\begin_layout Standard
+C3 = funcionTrapezoidal(370,430,600,600,C3,z1)
+\end_layout
+
+\begin_layout Standard
+#Sentido de giro
+\end_layout
+
+\begin_layout Standard
+D1 = funcionTrapezoidal(-1*100,-1*100,0.5*100,1*100,D1,z2)
+\end_layout
+
+\begin_layout Standard
+D2 = funcionTrapezoidal(0.7*100,0.9*100,1.1*100,1.3*100,D2,z2)
+\end_layout
+
+\begin_layout Standard
+D3 = funcionTrapezoidal(1*100,1.5*100,2*100,2*100,D3,z2)
+\end_layout
+
+\begin_layout Standard
+CZ1 = np.zeros((len(x),len(y)))
+\end_layout
+
+\begin_layout Standard
+CZ2 = np.zeros((len(x),len(y)))
+\end_layout
+
+\begin_layout Standard
+#Obtención de los grados de pertenencia a los conjuntos de los universos
+ de entrada
+\end_layout
+
+\begin_layout Standard
+def difusificacion(valx,valy):
+\end_layout
+
+\begin_layout Standard
+memA = [A1[valx],A2[valx],A3[valx],A4[valx],A5[valx]]
+\end_layout
+
+\begin_layout Standard
+memB = [B1[valy],B2[valy],B3[valy],B4[valy],B5[valy]]
+\end_layout
+
+\begin_layout Standard
+#Composición max - min (Evaluación de las reglas "si-entonces")
+\end_layout
+
+\begin_layout Standard
+#Tabla de inferencia (intersección - min)
+\end_layout
+
+\begin_layout Standard
+tabla = [[np.minimum(memA[0],memB[0]),np.minimum(memA[1],memB[0]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[2],memB[0]),np.minimum(memA[3],memB[0]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[4],memB[0])],
+\end_layout
+
+\begin_layout Standard
+[np.minimum(memA[0],memB[1]),np.minimum(memA[1],memB[1]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[2],memB[1]),np.minimum(memA[3],memB[1]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[4],memB[1])],
+\end_layout
+
+\begin_layout Standard
+[np.minimum(memA[0],memB[2]),np.minimum(memA[1],memB[2]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[2],memB[2]),np.minimum(memA[3],memB[2]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[4],memB[2])],
+\end_layout
+
+\begin_layout Standard
+[np.minimum(memA[0],memB[3]),np.minimum(memA[1],memB[3]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[2],memB[3]),np.minimum(memA[3],memB[3]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[4],memB[3])],
+\end_layout
+
+\begin_layout Standard
+[np.minimum(memA[0],memB[4]),np.minimum(memA[1],memB[4]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[2],memB[4]),np.minimum(memA[3],memB[4]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[4],memB[4])]] 
+\end_layout
+
+\begin_layout Standard
+#Agregación - max hacia Velocidad de giro
+\end_layout
+
+\begin_layout Standard
+agregacionC1 = max(tabla[0][0],max(tabla[1][1],
+\end_layout
+
+\begin_layout Standard
+max(tabla[2][2],
+\end_layout
+
+\begin_layout Standard
+max(tabla[3][3],max(tabla[4][4],
+\end_layout
+
+\begin_layout Standard
+max(tabla[4][0],tabla[0][4])))))) #Baja
+\end_layout
+
+\begin_layout Standard
+agregacionC2 = max(tabla[0][1],max(tabla[0][3],
+\end_layout
+
+\begin_layout Standard
+max(tabla[1][0],
+\end_layout
+
+\begin_layout Standard
+max(tabla[1][2],max(tabla[1][4],
+\end_layout
+
+\begin_layout Standard
+max(tabla[2][1],
+\end_layout
+
+\begin_layout Standard
+max(tabla[2][3],
+\end_layout
+
+\begin_layout Standard
+max(tabla[3][0],max(tabla[3][2],
+\end_layout
+
+\begin_layout Standard
+max(tabla[3][4],
+\end_layout
+
+\begin_layout Standard
+max(tabla[4][1],
+\end_layout
+
+\begin_layout Standard
+tabla[4][3]))))))))))) #Media
+\end_layout
+
+\begin_layout Standard
+agregacionC3 = max(tabla[0][2],max(tabla[1][3],
+\end_layout
+
+\begin_layout Standard
+max(tabla[2][0],
+\end_layout
+
+\begin_layout Standard
+max(tabla[2][4],max(tabla[3][1],tabla[4][2]))))) #Alta 
+\end_layout
+
+\begin_layout Standard
+#Agregación - max hacia Sentido de giro
+\end_layout
+
+\begin_layout Standard
+agregacionD1 = max(tabla[0][0],max(tabla[1][1],
+\end_layout
+
+\begin_layout Standard
+max(tabla[2][2],
+\end_layout
+
+\begin_layout Standard
+max(tabla[3][3],max(tabla[4][4],
+\end_layout
+
+\begin_layout Standard
+max(tabla[4][0],tabla[0][4])))))) #Baja
+\end_layout
+
+\begin_layout Standard
+agregacionD2 = max(tabla[0][1],max(tabla[0][2],
+\end_layout
+
+\begin_layout Standard
+max(tabla[1][2],
+\end_layout
+
+\begin_layout Standard
+max(tabla[2][3],max(tabla[2][4],
+\end_layout
+
+\begin_layout Standard
+max(tabla[3][4],max(tabla[3][0],
+\end_layout
+
+\begin_layout Standard
+max(tabla[3][1],tabla[4][1])))))))) #Media
+\end_layout
+
+\begin_layout Standard
+agregacionD3 = max(tabla[0][3],max(tabla[1][0],
+\end_layout
+
+\begin_layout Standard
+max(tabla[1][3],
+\end_layout
+
+\begin_layout Standard
+max(tabla[1][4],max(tabla[2][0],
+\end_layout
+
+\begin_layout Standard
+max(tabla[2][1],max(tabla[3][2],
+\end_layout
+
+\begin_layout Standard
+max(tabla[4][2],tabla[4][3])))))))) #Alta
+\end_layout
+
+\begin_layout Standard
+aux1 = agregacionC1*np.ones(len(C1))
+\end_layout
+
+\begin_layout Standard
+aux2 = agregacionC2*np.ones(len(C2))
+\end_layout
+
+\begin_layout Standard
+aux3 = agregacionC3*np.ones(len(C3))
+\end_layout
+
+\begin_layout Standard
+aux4 = agregacionD1*np.ones(len(D1))
+\end_layout
+
+\begin_layout Standard
+aux5 = agregacionD2*np.ones(len(D2))
+\end_layout
+
+\begin_layout Standard
+aux6 = agregacionD3*np.ones(len(D3))
+\end_layout
+
+\begin_layout Standard
+C1_r = np.minimum(C1,aux1)
+\end_layout
+
+\begin_layout Standard
+C2_r = np.minimum(C2,aux2)
+\end_layout
+
+\begin_layout Standard
+C3_r = np.minimum(C3,aux3)
+\end_layout
+
+\begin_layout Standard
+D1_r = np.minimum(D1,aux4)
+\end_layout
+
+\begin_layout Standard
+D2_r = np.minimum(D2,aux5)
+\end_layout
+
+\begin_layout Standard
+D3_r = np.minimum(D3,aux6)
+\end_layout
+
+\begin_layout Standard
+z_d = np.zeros((1,2))
+\end_layout
+
+\begin_layout Standard
+nume = 0
+\end_layout
+
+\begin_layout Standard
+deno = 0
+\end_layout
+
+\begin_layout Standard
+CT1 = np.maximum(C1_r,np.maximum(C2_r,C3_r))
+\end_layout
+
+\begin_layout Standard
+CT2 = np.maximum(D1_r,np.maximum(D2_r,D3_r))
+\end_layout
+
+\begin_layout Standard
+for i in range(len(z1)):
+\end_layout
+
+\begin_layout Standard
+nume += CT1[i]*i
+\end_layout
+
+\begin_layout Standard
+deno += CT1[i]
+\end_layout
+
+\begin_layout Standard
+z_d[0,0] = nume/deno
+\end_layout
+
+\begin_layout Standard
+nume = 0
+\end_layout
+
+\begin_layout Standard
+deno = 0
+\end_layout
+
+\begin_layout Standard
+for i in range(len(z2)):
+\end_layout
+
+\begin_layout Standard
+nume += CT2[i]*i/100
+\end_layout
+
+\begin_layout Standard
+deno += CT2[i]
+\end_layout
+
+\begin_layout Standard
+z_d[0,1] = nume/deno
+\end_layout
+
+\begin_layout Standard
+return z_d
+\end_layout
+
+\begin_layout Standard
+for i in range(len(x)):
+\end_layout
+
+\begin_layout Standard
+for j in range(len(y)):
+\end_layout
+
+\begin_layout Standard
+CZ1[i,j] = difusificacion(i,j)[0][0]
+\end_layout
+
+\begin_layout Standard
+CZ2[i,j] = difusificacion(i,j)[0][1]
+\end_layout
+
+\begin_layout Standard
+fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
+\end_layout
+
+\begin_layout Standard
+ax.set_xlabel('Y')
+\end_layout
+
+\begin_layout Standard
+ax.set_ylabel('X')
+\end_layout
+
+\begin_layout Standard
+ax.set_zlabel('Z')
+\end_layout
+
+\begin_layout Standard
+surf = ax.plot_surface(X, Y, CZ1, cmap=cm.coolwarm,
+\end_layout
+
+\begin_layout Standard
+linewidth=0, antialiased=False)
+\end_layout
+
+\begin_layout Standard
+fig2, ax2 = plt.subplots(subplot_kw={"projection": "3d"})
+\end_layout
+
+\begin_layout Standard
+ax2.set_xlabel('Y')
+\end_layout
+
+\begin_layout Standard
+ax2.set_ylabel('X')
+\end_layout
+
+\begin_layout Standard
+ax2.set_zlabel('Z')
+\end_layout
+
+\begin_layout Standard
+surf = ax2.plot_surface(X, Y, CZ2, cmap=cm.coolwarm, linewidth=0, antialiased=Fals
+e)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+literal "false"
+
+\end_inset
+
+B.
+ Granados Rojas P.
+ N.
+ Cortez Herrera Y.
+ E.
+ González Navarro.
+ Cómo Diseñar un Sistema de Inferencia Difusa de Tipo Mamdani.
+ 1st.
+ La Laguna Ticomán, CDMX, MX: Boletín UPIITA, 2019.
+\end_layout
+
+\end_body
+\end_document

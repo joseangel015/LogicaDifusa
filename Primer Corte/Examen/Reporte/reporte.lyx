@@ -1,0 +1,3061 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{pythonhighlight}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish-mexico
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.54cm
+\topmargin 2.54cm
+\rightmargin 2.54cm
+\bottommargin 2.54cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style plain
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{titlepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size largest
+EVALUACIÓN PRIMER DEPARTAMENTAL: DISEÑO DE UN SISTEMA DE INFERENCIA DE TIPO
+ MAMDANI PARA EL CONTROL DE UN CLIMATIZADOR
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.2cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/logo_ipn.png
+	width 11cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset VSpace 0.2cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+Ingeniería Telemática
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+\begin_inset VSpace 0.8cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+\bar under
+Lógica Difusa
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+\begin_inset VSpace 0.8cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size larger
+Abarca Romero José Ángel
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+Profesora
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+Gonzalez Navarro Yesenia Eleon
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+2TM9
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{titlepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Objetivo
+\end_layout
+
+\begin_layout Itemize
+Diseñar un sistema de inferencia de tipo Mamdani que para la resolución
+ de un problema a mediante un programa en Python.
+\end_layout
+
+\begin_layout Section
+Propuesta de problema a solucionar
+\end_layout
+
+\begin_layout Standard
+Suponiendo que deso controlar la temperatura en una habitación con flujo
+ estático de aire, coloco un sistema acondicionador que regula la temperatura
+ del aire que arroja, así como su velocidad dependiendo de la sensación
+ térmica que puede percibir mediante sus sensores.
+ Los sensores se encargan de medir la temperatura seca y la humedad relativa
+ de la habitación, las cuales se usan para determinar la sensación térmica
+ de la habitación.
+ El sistema, de forma automática, toma la decisión de aumentar o disminuir
+ el flujo del aire, así como de la temperatura que este tiene.
+\end_layout
+
+\begin_layout Section
+Desarrollo
+\end_layout
+
+\begin_layout Subsection
+Caracterización de los universos de entrada
+\end_layout
+
+\begin_layout Subsubsection
+Temperatura seca
+\end_layout
+
+\begin_layout Standard
+Suponiendo que el sistema de aire acondicionado se instala en una habitación
+ cuya temperatura oscila entre 0 y 50 C°, podemos definir una variable llamada
+ 
+\begin_inset Quotes qld
+\end_inset
+
+temperatura seca
+\begin_inset Quotes qrd
+\end_inset
+
+, la cual está definida entre 0 y 50.
+ Entiéndase temperatura seca como la temperatura que se puede censar en
+ el aire sin tomar en consideración la radiación calorífica de los objetos
+ que rodean el ambiente así su humedad relativa y la velocidad del aire.
+ Dentro de esta variable definimos los siguientes conjuntos: 
+\shape italic
+Frio, Templado, Caliente y Muy Caliente
+\shape default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/d1.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Universo de entrada 1: Temperatura seca en °C.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Humedad relativa
+\end_layout
+
+\begin_layout Standard
+Se define la humedad relativa como la relación entre la fracción molar del
+ vapor de agua en el aire y la fracción molar del vapor de agua en el aire
+ saturado a la misma temperatura.
+ Se denota por la letra griega 
+\begin_inset Formula $\Phi$
+\end_inset
+
+ y es adimensional.
+ El coeficiente se encuentra en el rango de 0 a 100, siendo el 100 el valor
+ máximo de saturación que puede alcanzar el vapor de agua en el aire con
+ relación al máximo valor que podría tener si estuviera saturado.
+ Con esta variable de entrada generamos los siguientes conjuntos: 
+\shape italic
+Seco, Húmedo y Zona de Comfort
+\shape default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/d2.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Universo de entrada 2: Humedad relativa (adimensional).
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig2"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Caracterización de los universos de salida
+\end_layout
+
+\begin_layout Standard
+Como mencioné en el planteamiento del problema, el aire acondicionado tiene
+ dos variables de salida: la velocidad con la que sale el flujo del aire
+ y la temperatura que éste tiene.
+\end_layout
+
+\begin_layout Subsubsection
+Temperatura del aire
+\end_layout
+
+\begin_layout Standard
+A diferencia de la variable 
+\begin_inset Quotes qld
+\end_inset
+
+temperatura seca
+\begin_inset Quotes qrd
+\end_inset
+
+ planteada anteriormente, la temperatura del aire que sale del sistema de
+ ambientación tiene un rango de operación más limitado, pues de forma convencion
+al, estos operan entre 16 y 28 C°.
+ Para este caso en específico, consideraré que la temperatura del aire que
+ arroja el dispositivo oscila entre 15 y 30 C°.
+ Dentro de esta variable consideraré los siguientes conjuntos 
+\shape slanted
+Frio, Templado y Caliente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/d3.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Universo de salida 1: Temperatura del flujo de aire en °C.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig3"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Velocidad del flujo de aire
+\end_layout
+
+\begin_layout Standard
+Para medir qué tan rápido irá el flujo de aire utilizaré la escala Beaufort,
+ la cual asigna números en una escala que va del 0 al 12, siendo 0 
+\begin_inset Quotes qld
+\end_inset
+
+calma
+\begin_inset Quotes qrd
+\end_inset
+
+ y 12 
+\begin_inset Quotes qld
+\end_inset
+
+huracán
+\begin_inset Quotes qrd
+\end_inset
+
+.
+ Como es de esperarse, el sistema de refrigeración no requiere de la consideraci
+ón de la escala completa, por lo que tomaré únicamente los valores 0, 1,
+ 2 y 3, los cuales son: 
+\shape italic
+calma, aire ligero, brisa ligera y brisa suave 
+\shape default
+cuyas velocidades son 0.5 m/s, 1.5 m/s, 3 m/s y 6 m/s respectivamente.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/d4.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Universo de salida 2: Velocidad del flujo del aire en metros/segundos.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig4"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Tablas de inferencia hacia los conjuntos de salida
+\end_layout
+
+\begin_layout Standard
+Las tablas de inferencia son las que determinan las reglas 
+\begin_inset Quotes qld
+\end_inset
+
+si - entonces
+\begin_inset Quotes qrd
+\end_inset
+
+.
+ Al tener dos variables difusas a la salida del sistema, diseñé dos tablas
+ de inferencia por separado.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Humedad/Temperatura
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Frío
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Templado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Caliente
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Muy caliente
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seco
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color red
+Caliente
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Templado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+Frio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+Frio
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zona de comfort
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Templado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Templado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Templado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+Frio
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Húmedo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color red
+Caliente
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Templado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+Frio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+Frio
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de inferencia hacia Temperatura del aire.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:tabla1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Humedad/Temperatura
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Frío
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Templado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Caliente
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Muy caliente
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seco
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color teal
+Aire ligero
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color teal
+Aire ligero
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color purple
+Brisa ligera
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Brisa suave
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zona de comfort
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color teal
+Aire ligero
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color gray
+Calma
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color purple
+Brisa ligera
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Brisa suave
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Húmedo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color teal
+Aire ligero
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color teal
+Aire ligero
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color purple
+Brisa ligera
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color olive
+Brisa suave
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de inferencia para Velocidad del viento
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:tabla2"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En base a la tabla de inferencia 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:tabla1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ propongo las siguientes reglas 
+\begin_inset Quotes qld
+\end_inset
+
+si - entonces
+\begin_inset Quotes qrd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Enumerate
+Si el aire es seco y su temperatura fría, entonces la temperatura de salida
+ es Caliente.
+\end_layout
+
+\begin_layout Enumerate
+Si el aire es seco y su temperatura es templada, entonces la temperatura
+ de salida es Templada.
+\end_layout
+
+\begin_layout Enumerate
+Si el aire es seco y su temperatura es caliente , entonces la temperatura
+ de salida es Fría.
+\end_layout
+
+\begin_layout Enumerate
+Si el aire es seco y su temperatura es muy caliente , entonces la temperatura
+ de salida es Fría.
+\end_layout
+
+\begin_layout Enumerate
+Si el aire está en zona de comfort y su temperatura fría, entonces la temperatur
+a de salida es Templada.
+\end_layout
+
+\begin_layout Enumerate
+Si el aire está en zona de comfort y su temperatura templada, entonces la
+ temperatura de salida es Templada.
+\end_layout
+
+\begin_layout Enumerate
+Si el aire está en zona de comfort y su temperatura caliente, entonces la
+ temperatura de salida es Templada.
+\end_layout
+
+\begin_layout Enumerate
+Si el aire está en zona de comfort y su temperatura muy caliente, entonces
+ la temperatura de salida es Fría.
+\end_layout
+
+\begin_layout Enumerate
+Si el aire es húmedo y su temperatura fría, entonces la temperatura de salida
+ es Caliente.
+\end_layout
+
+\begin_layout Enumerate
+Si el aire es húmedo y su temperatura es templada, entonces la temperatura
+ de salida es Templada.
+\end_layout
+
+\begin_layout Enumerate
+Si el aire es húmedo y su temperatura es caliente , entonces la temperatura
+ de salida es Fría.
+\end_layout
+
+\begin_layout Enumerate
+Si el aire es húmedo y su temperatura es muy caliente , entonces la temperatura
+ de salida es Fría.
+\end_layout
+
+\begin_layout Standard
+Ahora muestro las reglas 
+\begin_inset Quotes qld
+\end_inset
+
+si - entonces
+\begin_inset Quotes qrd
+\end_inset
+
+ para la tabla de inferencia 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:tabla2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Enumerate
+Si el aire es seco y su temperatura fría, entonces la velocidad del viento
+ es Aire ligero.
+\end_layout
+
+\begin_layout Enumerate
+Si el aire es seco y su temperatura es templada, entonces la velocidad del
+ viento es Aire ligero.
+\end_layout
+
+\begin_layout Enumerate
+Si el aire es seco y su temperatura es caliente , entonces la velocidad
+ del viento es Brisa ligera.
+\end_layout
+
+\begin_layout Enumerate
+Si el aire es seco y su temperatura es muy caliente , entonces la velocidad
+ del viento es Brisa suave.
+\end_layout
+
+\begin_layout Enumerate
+Si el aire está en zona de comfort y su temperatura fría, entonces la velocidad
+ del viento es Aire ligero.
+\end_layout
+
+\begin_layout Enumerate
+Si el aire está en zona de comfort y su temperatura templada, entonces la
+ velocidad del viento es Calma.
+\end_layout
+
+\begin_layout Enumerate
+Si el aire está en zona de comfort y su temperatura caliente, entonces la
+ velocidad del viento es Brisa ligera.
+\end_layout
+
+\begin_layout Enumerate
+Si el aire está en zona de comfort y su temperatura muy caliente, entonces
+ la velocidad del viento es Brisa suave.
+\end_layout
+
+\begin_layout Enumerate
+Si el aire es húmedo y su temperatura fría, entonces la velocidad del viento
+ es Aire ligero.
+\end_layout
+
+\begin_layout Enumerate
+Si el aire es húmedo y su temperatura es templada, entonces la velocidad
+ del viento es Aire ligero.
+\end_layout
+
+\begin_layout Enumerate
+Si el aire es húmedo y su temperatura es caliente , entonces la velocidad
+ del viento es Brisa ligera.
+\end_layout
+
+\begin_layout Enumerate
+Si el aire es húmedo y su temperatura es muy caliente , entonces la velocidad
+ del viento es Brisa suave.
+\end_layout
+
+\begin_layout Subsection
+Programación del sistema de inferencia en Python
+\end_layout
+
+\begin_layout Standard
+Con base a las reglas 
+\begin_inset Quotes qld
+\end_inset
+
+si - entonces
+\begin_inset Quotes qrd
+\end_inset
+
+ generadas para las tablas de inferencia 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:tabla1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:tabla2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, modifiqué el programa que realicé para la práctica 1.2.
+ Los cambios relevantes consisten en ajustar el tamaño de las tablas de
+ inferencia y aplicar correctamente las reglas 
+\begin_inset Quotes qld
+\end_inset
+
+si - entonces
+\begin_inset Quotes qrd
+\end_inset
+
+ para lo requerido por este ejercicio.
+ A continuación muestro las gráficas correspondientes al proceso de desdifusific
+ación de un valor difuso para cada uno de los universos de salida a partir
+ de dos valores de entrada 
+\begin_inset Formula $x=45$
+\end_inset
+
+ y 
+\begin_inset Formula $y=67$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/d5.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Cortes en los conjuntos del universo de salida 
+\begin_inset Quotes qld
+\end_inset
+
+Temperatura del flujo de aire
+\begin_inset Quotes qrd
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig5"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/d7.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Unión de los conjuntos recortados 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/d6.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Cortes a los conjuntos del universo de salida 
+\begin_inset Quotes qld
+\end_inset
+
+Velocidad del flujo de aire
+\begin_inset Quotes qrd
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig6"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/d8.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Unión de los conjuntos recortados
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/d9.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de inferencia y valores desfusificados para 
+\begin_inset Formula $x=45$
+\end_inset
+
+ y 
+\begin_inset Formula $y=67$
+\end_inset
+
+ .
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig7"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+En la siguiente sección muestro las superficies de control obtenidas.
+\end_layout
+
+\begin_layout Section
+Resultados
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/r1.png
+	width 9cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Superficie de control para 
+\begin_inset Quotes qld
+\end_inset
+
+Temperatura del viento
+\begin_inset Quotes qrd
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig8"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/r2.png
+	width 9cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Superficie de control para 
+\begin_inset Quotes qld
+\end_inset
+
+Velocidad del viento
+\begin_inset Quotes qrd
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig9"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conclusiones
+\end_layout
+
+\begin_layout Standard
+A diferencia de las prácticas 1.1 y 1.2, para caracterizar las variables de
+ este ejercicio utilicé rangos de operación distintos uno respecto del otro,
+ pues su comportamiento está limitado de cierta forma para hacerlo coincidir
+ con el comportamiento que tendría en la vida real.
+ Con ello me di cuenta de la complejidad que conlleva hacer que las tablas
+ de inferencia y las reglas 
+\begin_inset Quotes qld
+\end_inset
+
+si - entonces
+\begin_inset Quotes qrd
+\end_inset
+
+ sean coherentes con el comportamiento real del sistema.
+ Además, esto mismo requirió que se realizaran ajustes en el modo de operación
+ de las funciones que había definido previamente, pues el hecho de que ciertas
+ variables no inicien en 0 implica que ciertos desplazamientos horizontales
+ se necesitan para hacer que los resultados tengan sentido.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Apéndices
+\end_layout
+
+\begin_layout Subsection*
+Código para la generación de gráficas de los conjuntos de entrada y salida
+ caracterizados {graficas.py}
+\end_layout
+
+\begin_layout Standard
+import numpy as np
+\end_layout
+
+\begin_layout Standard
+import matplotlib.pyplot as plt 
+\end_layout
+
+\begin_layout Standard
+x = np.arange(0, 50, 0.1) 
+\end_layout
+
+\begin_layout Standard
+y = np.arange(0, 100, 0.1) 
+\end_layout
+
+\begin_layout Standard
+z1 = np.arange(15, 30, 0.1)
+\end_layout
+
+\begin_layout Standard
+z2 = np.arange(0, 3, 0.01)
+\end_layout
+
+\begin_layout Standard
+# X, Y = np.meshgrid(x, y)
+\end_layout
+
+\begin_layout Standard
+#Temperatura seca
+\end_layout
+
+\begin_layout Standard
+A1 = np.zeros(len(x)) #Frio
+\end_layout
+
+\begin_layout Standard
+A2 = np.zeros(len(x)) #Templado
+\end_layout
+
+\begin_layout Standard
+A3 = np.zeros(len(x)) #Caliente
+\end_layout
+
+\begin_layout Standard
+A4 = np.zeros(len(x)) #Muy caliente
+\end_layout
+
+\begin_layout Standard
+#Humedad relativa
+\end_layout
+
+\begin_layout Standard
+B1 = np.zeros(len(y)) #Seco
+\end_layout
+
+\begin_layout Standard
+B2 = np.zeros(len(y)) #Zona de comfort
+\end_layout
+
+\begin_layout Standard
+B3 = np.zeros(len(y)) #Húmedo
+\end_layout
+
+\begin_layout Standard
+#Temperatura del aire
+\end_layout
+
+\begin_layout Standard
+C1 = np.zeros(len(z1)) #Frio
+\end_layout
+
+\begin_layout Standard
+C2 = np.zeros(len(z1)) #Templado
+\end_layout
+
+\begin_layout Standard
+C3 = np.zeros(len(z1)) #Caliente
+\end_layout
+
+\begin_layout Standard
+#Velocidad del viento
+\end_layout
+
+\begin_layout Standard
+D1 = np.zeros(len(z2)) #Calma
+\end_layout
+
+\begin_layout Standard
+D2 = np.zeros(len(z2)) #Aire ligero
+\end_layout
+
+\begin_layout Standard
+D3 = np.zeros(len(z2)) #Brisa ligera
+\end_layout
+
+\begin_layout Standard
+D4 = np.zeros(len(z2)) #Brisa suave
+\end_layout
+
+\begin_layout Standard
+def funcionCampana(a,b,c,C,r):
+\end_layout
+
+\begin_layout Standard
+a = a*10 #Ancho de la campana
+\end_layout
+
+\begin_layout Standard
+b = b*10 #Razon de cambio
+\end_layout
+
+\begin_layout Standard
+c = c*10 #Centro de la campana
+\end_layout
+
+\begin_layout Standard
+for i in range(len(r)):
+\end_layout
+
+\begin_layout Standard
+C[i] = 1/(1 + abs((i-c)/a)**(2*b))
+\end_layout
+
+\begin_layout Standard
+return C
+\end_layout
+
+\begin_layout Standard
+def funcionTrapezoidal(a,b,c,d,C,r):
+\end_layout
+
+\begin_layout Standard
+a = a*10
+\end_layout
+
+\begin_layout Standard
+b = b*10
+\end_layout
+
+\begin_layout Standard
+c = c*10
+\end_layout
+
+\begin_layout Standard
+d = d*10
+\end_layout
+
+\begin_layout Standard
+for i in range(len(r)):
+\end_layout
+
+\begin_layout Standard
+if i <= a:
+\end_layout
+
+\begin_layout Standard
+C[i] = 0
+\end_layout
+
+\begin_layout Standard
+elif a < i and i <= b:
+\end_layout
+
+\begin_layout Standard
+C[i] = (i - a)/(b - a)
+\end_layout
+
+\begin_layout Standard
+elif b < i and i <= c:
+\end_layout
+
+\begin_layout Standard
+C[i] = 1
+\end_layout
+
+\begin_layout Standard
+elif c < i and i <= d:
+\end_layout
+
+\begin_layout Standard
+C[i] = (d - i)/(d - c)
+\end_layout
+
+\begin_layout Standard
+elif d < i:
+\end_layout
+
+\begin_layout Standard
+C[i] = 0
+\end_layout
+
+\begin_layout Standard
+return C
+\end_layout
+
+\begin_layout Standard
+#Generación de los conjuntos difusos
+\end_layout
+
+\begin_layout Standard
+#Temperatura seca
+\end_layout
+
+\begin_layout Standard
+A1 = funcionCampana(10,0.25,0,A1,x)
+\end_layout
+
+\begin_layout Standard
+A2 = funcionCampana(10,0.25,15,A2,x)
+\end_layout
+
+\begin_layout Standard
+A3 = funcionCampana(10,0.25,35,A3,x)
+\end_layout
+
+\begin_layout Standard
+A4 = funcionCampana(10,0.25,50,A4,x)
+\end_layout
+
+\begin_layout Standard
+plt.figure(1)
+\end_layout
+
+\begin_layout Standard
+plt.plot(x,A1,x,A2,x,A3,x,A4)
+\end_layout
+
+\begin_layout Standard
+plt.xlabel("Temperatura seca [°C]")
+\end_layout
+
+\begin_layout Standard
+plt.ylabel("Membresía")
+\end_layout
+
+\begin_layout Standard
+#Humedad relativa
+\end_layout
+
+\begin_layout Standard
+B1 = funcionTrapezoidal(-1,-1,20,30,B1,y)
+\end_layout
+
+\begin_layout Standard
+B2 = funcionTrapezoidal(20,30,70,80,B2,y)
+\end_layout
+
+\begin_layout Standard
+B3 = funcionTrapezoidal(70,80,100,100,B3,y)
+\end_layout
+
+\begin_layout Standard
+plt.figure(2)
+\end_layout
+
+\begin_layout Standard
+plt.plot(y,B1,y,B2,y,B3)
+\end_layout
+
+\begin_layout Standard
+plt.xlabel("Humedad relativa")
+\end_layout
+
+\begin_layout Standard
+plt.ylabel("Membresía")
+\end_layout
+
+\begin_layout Standard
+# Temperatura del viento
+\end_layout
+
+\begin_layout Standard
+C1 = funcionCampana(5,0.25,0,C1,z1)
+\end_layout
+
+\begin_layout Standard
+C2 = funcionCampana(5,0.25,7.5,C2,z1)
+\end_layout
+
+\begin_layout Standard
+C3 = funcionCampana(5,0.25,15,C3,z1)
+\end_layout
+
+\begin_layout Standard
+plt.figure(3)
+\end_layout
+
+\begin_layout Standard
+plt.plot(z1,C1,z1,C2,z1,C3)
+\end_layout
+
+\begin_layout Standard
+plt.xlabel("Temperatura del viento [°C]")
+\end_layout
+
+\begin_layout Standard
+plt.ylabel("Membresía")
+\end_layout
+
+\begin_layout Standard
+#Velocidad del viento
+\end_layout
+
+\begin_layout Standard
+D1 = funcionTrapezoidal(-1*10,-1*10,0.37*10,0.62*10,D1,z2)
+\end_layout
+
+\begin_layout Standard
+D2 = funcionTrapezoidal(0.37*10,0.62*10,1.37*10,1.62*10,D2,z2)
+\end_layout
+
+\begin_layout Standard
+D3 = funcionTrapezoidal(1.37*10,1.62*10,2.37*10,2.62*10,D3,z2)
+\end_layout
+
+\begin_layout Standard
+D4 = funcionTrapezoidal(2.37*10,2.62*10,3*10,3*10,D4,z2)
+\end_layout
+
+\begin_layout Standard
+plt.figure(4)
+\end_layout
+
+\begin_layout Standard
+plt.plot(z2,D1,z2,D2,z2,D3,z2,D4)
+\end_layout
+
+\begin_layout Standard
+plt.xlabel("Velocidad del viento [m/s]")
+\end_layout
+
+\begin_layout Standard
+plt.ylabel("Membresía")
+\end_layout
+
+\begin_layout Standard
+#CZ = np.zeros((len(x),len(y)))
+\end_layout
+
+\begin_layout Standard
+#Obtención de los grados de pertenencia a los conjuntos de los universos
+ de entrada
+\end_layout
+
+\begin_layout Standard
+valx = int(input("Ingrese el valor de la temperatura seca (0 - 50): "))
+\end_layout
+
+\begin_layout Standard
+memA = [A1[valx*10],A2[valx*10],A3[valx*10],A4[valx*10]]
+\end_layout
+
+\begin_layout Standard
+valy = int(input("Ingrese el valor de la humedad relativa (0 - 100): "))
+\end_layout
+
+\begin_layout Standard
+memB = [B1[valy*10],B2[valy*10],B3[valy*10]]
+\end_layout
+
+\begin_layout Standard
+#Composición max - min (Evaluación de las reglas "si-entonces")
+\end_layout
+
+\begin_layout Standard
+#Tablas de inferencia (intersección - min)
+\end_layout
+
+\begin_layout Standard
+tabla = [[np.minimum(memA[0],memB[0]),np.minimum(memA[1],memB[0]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[2],memB[0]),np.minimum(memA[3],memB[0])],
+\end_layout
+
+\begin_layout Standard
+[np.minimum(memA[0],memB[1]),np.minimum(memA[1],memB[1]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[2],memB[1]),np.minimum(memA[3],memB[1])],
+\end_layout
+
+\begin_layout Standard
+[np.minimum(memA[0],memB[2]),np.minimum(memA[1],memB[2]),
+\end_layout
+
+\begin_layout Standard
+np.minimum(memA[2],memB[2]),np.minimum(memA[3],memB[2])]]
+\end_layout
+
+\begin_layout Standard
+print("Tabla de inferencia: ",str(tabla))
+\end_layout
+
+\begin_layout Standard
+#Agregación - max hacia Temperatura del viento
+\end_layout
+
+\begin_layout Standard
+agregacionC1 = max(tabla[0][2],max(tabla[0][3],max(tabla[1][3],
+\end_layout
+
+\begin_layout Standard
+max(tabla[2][2],tabla[2][3])))) #Frio
+\end_layout
+
+\begin_layout Standard
+agregacionC2 = max(tabla[0][1],max(tabla[1][0],max(tabla[1][1],
+\end_layout
+
+\begin_layout Standard
+max(tabla[1][2],tabla[2][1])))) #Templado
+\end_layout
+
+\begin_layout Standard
+agregacionC3 = max(tabla[0][0],tabla[2][0]) #Caliente
+\end_layout
+
+\begin_layout Standard
+#Agregación - max hacia Velocidad del viento
+\end_layout
+
+\begin_layout Standard
+agregacionD1 = tabla[1][1] #Calma
+\end_layout
+
+\begin_layout Standard
+agregacionD2 = max(tabla[0][0],max(tabla[0][1],max(tabla[1][0],
+\end_layout
+
+\begin_layout Standard
+max(tabla[2][0],tabla[2][1])))) #Aire ligero
+\end_layout
+
+\begin_layout Standard
+agregacionD3 = max(tabla[0][2],max(tabla[1][2],tabla[2][2])) #Brisa ligera
+\end_layout
+
+\begin_layout Standard
+agregacionD4 = max(tabla[0][3],max(tabla[1][3],tabla[2][3])) #Brisa suave
+\end_layout
+
+\begin_layout Standard
+aux1 = agregacionC1*np.ones(len(C1))
+\end_layout
+
+\begin_layout Standard
+aux2 = agregacionC2*np.ones(len(C2))
+\end_layout
+
+\begin_layout Standard
+aux3 = agregacionC3*np.ones(len(C3))
+\end_layout
+
+\begin_layout Standard
+aux4 = agregacionD1*np.ones(len(D1))
+\end_layout
+
+\begin_layout Standard
+aux5 = agregacionD2*np.ones(len(D2))
+\end_layout
+
+\begin_layout Standard
+aux6 = agregacionD3*np.ones(len(D3))
+\end_layout
+
+\begin_layout Standard
+aux7 = agregacionD4*np.ones(len(D4))
+\end_layout
+
+\begin_layout Standard
+C1_r = np.minimum(C1,aux1)
+\end_layout
+
+\begin_layout Standard
+C2_r = np.minimum(C2,aux2)
+\end_layout
+
+\begin_layout Standard
+C3_r = np.minimum(C3,aux3)
+\end_layout
+
+\begin_layout Standard
+D1_r = np.minimum(D1,aux4)
+\end_layout
+
+\begin_layout Standard
+D2_r = np.minimum(D2,aux5)
+\end_layout
+
+\begin_layout Standard
+D3_r = np.minimum(D3,aux6)
+\end_layout
+
+\begin_layout Standard
+D4_r = np.minimum(D4,aux7)
+\end_layout
+
+\begin_layout Standard
+plt.figure(5)
+\end_layout
+
+\begin_layout Standard
+plt.plot(z1,C1,z1,C2,z1,C3,z1,C1_r,z1,C2_r,z1,C3_r)
+\end_layout
+
+\begin_layout Standard
+plt.xlabel("Temperatura del viento [°C]")
+\end_layout
+
+\begin_layout Standard
+plt.ylabel("Membresía")
+\end_layout
+
+\begin_layout Standard
+plt.figure(6)
+\end_layout
+
+\begin_layout Standard
+plt.plot(z2,D1,z2,D2,z2,D3,z2,D4,z2,D1_r,z2,D2_r,z2,D3_r,z2,D4_r)
+\end_layout
+
+\begin_layout Standard
+plt.xlabel("Velocidad del viento [m/s]")
+\end_layout
+
+\begin_layout Standard
+plt.ylabel("Membresía") 
+\end_layout
+
+\begin_layout Standard
+#Dedifusificación
+\end_layout
+
+\begin_layout Standard
+#Temperatura del viento
+\end_layout
+
+\begin_layout Standard
+z_d = 0
+\end_layout
+
+\begin_layout Standard
+nume = 0
+\end_layout
+
+\begin_layout Standard
+deno = 0
+\end_layout
+
+\begin_layout Standard
+CT1 = np.maximum(C1_r,C2_r,C3_r)
+\end_layout
+
+\begin_layout Standard
+plt.figure(7)
+\end_layout
+
+\begin_layout Standard
+plt.plot(z1,CT1)
+\end_layout
+
+\begin_layout Standard
+plt.xlabel("Temperatura del viento [°C]")
+\end_layout
+
+\begin_layout Standard
+plt.ylabel("Membresía")
+\end_layout
+
+\begin_layout Standard
+for i in range(len(z1)):
+\end_layout
+
+\begin_layout Standard
+nume += CT1[i]*(i/10+15)
+\end_layout
+
+\begin_layout Standard
+deno += CT1[i]
+\end_layout
+
+\begin_layout Standard
+z_d = nume/deno
+\end_layout
+
+\begin_layout Standard
+print("z1* = ", str(z_d), " [°C]")
+\end_layout
+
+\begin_layout Standard
+# Velocidad del viento
+\end_layout
+
+\begin_layout Standard
+z_d = 0
+\end_layout
+
+\begin_layout Standard
+nume = 0
+\end_layout
+
+\begin_layout Standard
+deno = 0
+\end_layout
+
+\begin_layout Standard
+CT2 = np.maximum(np.maximum(D1_r,D2_r,D3_r),D4_r)
+\end_layout
+
+\begin_layout Standard
+plt.figure(8)
+\end_layout
+
+\begin_layout Standard
+plt.plot(z2,CT2)
+\end_layout
+
+\begin_layout Standard
+plt.xlabel("Velocidad del viento [m/s]")
+\end_layout
+
+\begin_layout Standard
+plt.ylabel("Membresía")
+\end_layout
+
+\begin_layout Standard
+for i in range(len(z2)):
+\end_layout
+
+\begin_layout Standard
+nume += CT2[i]*i/100
+\end_layout
+
+\begin_layout Standard
+deno += CT2[i]
+\end_layout
+
+\begin_layout Standard
+z_d = nume/deno
+\end_layout
+
+\begin_layout Standard
+print("z2* = ", str(z_d), "[m/s]")
+\end_layout
+
+\begin_layout Subsection*
+Código para la generación de superficies de control {3d.py}
+\end_layout
+
+\begin_layout Standard
+import numpy as np
+\end_layout
+
+\begin_layout Standard
+import matplotlib.pyplot as plt 
+\end_layout
+
+\begin_layout Standard
+from matplotlib import cm
+\end_layout
+
+\begin_layout Standard
+x = np.arange(0, 50, 0.1) 
+\end_layout
+
+\begin_layout Standard
+y = np.arange(0, 100, 0.2) 
+\end_layout
+
+\begin_layout Standard
+z1 = np.arange(15, 30, 0.1)
+\end_layout
+
+\begin_layout Standard
+z2 = np.arange(0, 3, 0.01)
+\end_layout
+
+\begin_layout Standard
+X, Y = np.meshgrid(x, y)
+\end_layout
+
+\begin_layout Standard
+#Temperatura seca
+\end_layout
+
+\begin_layout Standard
+A1 = np.zeros(len(x)) #Frio
+\end_layout
+
+\begin_layout Standard
+A2 = np.zeros(len(x)) #Templado
+\end_layout
+
+\begin_layout Standard
+A3 = np.zeros(len(x)) #Caliente
+\end_layout
+
+\begin_layout Standard
+A4 = np.zeros(len(x)) #Muy caliente
+\end_layout
+
+\begin_layout Standard
+#Humedad relativa
+\end_layout
+
+\begin_layout Standard
+B1 = np.zeros(len(y)) #Seco
+\end_layout
+
+\begin_layout Standard
+B2 = np.zeros(len(y)) #Zona de comfort
+\end_layout
+
+\begin_layout Standard
+B3 = np.zeros(len(y)) #Húmedo
+\end_layout
+
+\begin_layout Standard
+#Temperatura del aire
+\end_layout
+
+\begin_layout Standard
+C1 = np.zeros(len(z1)) #Frio
+\end_layout
+
+\begin_layout Standard
+C2 = np.zeros(len(z1)) #Templado
+\end_layout
+
+\begin_layout Standard
+C3 = np.zeros(len(z1)) #Caliente
+\end_layout
+
+\begin_layout Standard
+#Velocidad del viento
+\end_layout
+
+\begin_layout Standard
+D1 = np.zeros(len(z2)) #Calma
+\end_layout
+
+\begin_layout Standard
+D2 = np.zeros(len(z2)) #Aire ligero
+\end_layout
+
+\begin_layout Standard
+D3 = np.zeros(len(z2)) #Brisa ligera
+\end_layout
+
+\begin_layout Standard
+D4 = np.zeros(len(z2)) #Brisa suave
+\end_layout
+
+\begin_layout Standard
+def funcionCampana(a,b,c,C,r):
+\end_layout
+
+\begin_layout Standard
+a = a*10 #Ancho de la campana
+\end_layout
+
+\begin_layout Standard
+b = b*10 #Razon de cambio
+\end_layout
+
+\begin_layout Standard
+c = c*10 #Centro de la campana
+\end_layout
+
+\begin_layout Standard
+for i in range(len(r)):
+\end_layout
+
+\begin_layout Standard
+C[i] = 1/(1 + abs((i-c)/a)**(2*b))
+\end_layout
+
+\begin_layout Standard
+return C
+\end_layout
+
+\begin_layout Standard
+def funcionTrapezoidal(a,b,c,d,C,r):
+\end_layout
+
+\begin_layout Standard
+a = a*10
+\end_layout
+
+\begin_layout Standard
+b = b*10
+\end_layout
+
+\begin_layout Standard
+c = c*10
+\end_layout
+
+\begin_layout Standard
+d = d*10
+\end_layout
+
+\begin_layout Standard
+for i in range(len(r)):
+\end_layout
+
+\begin_layout Standard
+if i <= a:
+\end_layout
+
+\begin_layout Standard
+C[i] = 0
+\end_layout
+
+\begin_layout Standard
+elif a < i and i <= b:
+\end_layout
+
+\begin_layout Standard
+C[i] = (i - a)/(b - a)
+\end_layout
+
+\begin_layout Standard
+elif b < i and i <= c:
+\end_layout
+
+\begin_layout Standard
+C[i] = 1
+\end_layout
+
+\begin_layout Standard
+elif c < i and i <= d:
+\end_layout
+
+\begin_layout Standard
+C[i] = (d - i)/(d - c)
+\end_layout
+
+\begin_layout Standard
+elif d < i:
+\end_layout
+
+\begin_layout Standard
+C[i] = 0
+\end_layout
+
+\begin_layout Standard
+return C
+\end_layout
+
+\begin_layout Standard
+#Generación de los conjuntos difusos
+\end_layout
+
+\begin_layout Standard
+#Temperatura seca
+\end_layout
+
+\begin_layout Standard
+A1 = funcionCampana(10,0.25,0,A1,x)
+\end_layout
+
+\begin_layout Standard
+A2 = funcionCampana(10,0.25,15,A2,x)
+\end_layout
+
+\begin_layout Standard
+A3 = funcionCampana(10,0.25,35,A3,x)
+\end_layout
+
+\begin_layout Standard
+A4 = funcionCampana(10,0.25,50,A4,x)
+\end_layout
+
+\begin_layout Standard
+#Humedad relativa
+\end_layout
+
+\begin_layout Standard
+B1 = funcionTrapezoidal(-1,-1,20,30,B1,y)
+\end_layout
+
+\begin_layout Standard
+B2 = funcionTrapezoidal(20,30,70,80,B2,y)
+\end_layout
+
+\begin_layout Standard
+B3 = funcionTrapezoidal(70,80,100,100,B3,y)
+\end_layout
+
+\begin_layout Standard
+# Temperatura del viento
+\end_layout
+
+\begin_layout Standard
+C1 = funcionCampana(5,0.25,0,C1,z1)
+\end_layout
+
+\begin_layout Standard
+C2 = funcionCampana(5,0.25,7.5,C2,z1)
+\end_layout
+
+\begin_layout Standard
+C3 = funcionCampana(5,0.25,15,C3,z1)
+\end_layout
+
+\begin_layout Standard
+#Velocidad del viento
+\end_layout
+
+\begin_layout Standard
+D1 = funcionTrapezoidal(-1*10,-1*10,0.37*10,0.62*10,D1,z2)
+\end_layout
+
+\begin_layout Standard
+D2 = funcionTrapezoidal(0.37*10,0.62*10,1.37*10,1.62*10,D2,z2)
+\end_layout
+
+\begin_layout Standard
+D3 = funcionTrapezoidal(1.37*10,1.62*10,2.37*10,2.62*10,D3,z2)
+\end_layout
+
+\begin_layout Standard
+D4 = funcionTrapezoidal(2.37*10,2.62*10,3*10,3*10,D4,z2)
+\end_layout
+
+\begin_layout Standard
+CZ1 = np.zeros((len(x),len(y)))
+\end_layout
+
+\begin_layout Standard
+CZ2 = np.zeros((len(x),len(y)))
+\end_layout
+
+\begin_layout Standard
+#Obtención de los grados de pertenencia a los conjuntos de los universos
+ de entrada
+\end_layout
+
+\begin_layout Standard
+def difusificacion(valx,valy):
+\end_layout
+
+\begin_layout Standard
+memA = [A1[valx],A2[valx],A3[valx],A4[valx]]
+\end_layout
+
+\begin_layout Standard
+memB = [B1[valy],B2[valy],B3[valy]]
+\end_layout
+
+\begin_layout Standard
+#Composición max - min (Evaluación de las reglas "si-entonces")
+\end_layout
+
+\begin_layout Standard
+#Tablas de inferencia (intersección - min)
+\end_layout
+
+\begin_layout Standard
+tabla = [[np.minimum(memA[0],memB[0]),np.minimum(memA[1],
+\end_layout
+
+\begin_layout Standard
+memB[0]),np.minimum(memA[2],memB[0]),np.minimum(memA[3],memB[0])],
+\end_layout
+
+\begin_layout Standard
+[np.minimum(memA[0],memB[1]),np.minimum(memA[1],
+\end_layout
+
+\begin_layout Standard
+memB[1]),np.minimum(memA[2],memB[1]),np.minimum(memA[3],memB[1])],
+\end_layout
+
+\begin_layout Standard
+[np.minimum(memA[0],memB[2]),np.minimum(memA[1],
+\end_layout
+
+\begin_layout Standard
+memB[2]),np.minimum(memA[2],memB[2]),np.minimum(memA[3],memB[2])]]
+\end_layout
+
+\begin_layout Standard
+#Agregación - max hacia Temperatura del viento
+\end_layout
+
+\begin_layout Standard
+agregacionC1 = max(tabla[0][2],max(tabla[0][3],
+\end_layout
+
+\begin_layout Standard
+max(tabla[1][3],max(tabla[2][2],tabla[2][3])))) #Frio
+\end_layout
+
+\begin_layout Standard
+agregacionC2 = max(tabla[0][1],max(tabla[1][0],
+\end_layout
+
+\begin_layout Standard
+max(tabla[1][1],max(tabla[1][2],tabla[2][1])))) #Templado
+\end_layout
+
+\begin_layout Standard
+agregacionC3 = max(tabla[0][0],tabla[2][0]) #Caliente
+\end_layout
+
+\begin_layout Standard
+#Agregación - max hacia Velocidad del viento
+\end_layout
+
+\begin_layout Standard
+agregacionD1 = tabla[1][1] #Calma
+\end_layout
+
+\begin_layout Standard
+agregacionD2 = max(tabla[0][0],max(tabla[0][1],
+\end_layout
+
+\begin_layout Standard
+max(tabla[1][0],max(tabla[2][0],tabla[2][1])))) #Aire ligero
+\end_layout
+
+\begin_layout Standard
+agregacionD3 = max(tabla[0][2],max(tabla[1][2],tabla[2][2])) #Brisa ligera
+\end_layout
+
+\begin_layout Standard
+agregacionD4 = max(tabla[0][3],max(tabla[1][3],tabla[2][3])) #Brisa suave
+\end_layout
+
+\begin_layout Standard
+aux1 = agregacionC1*np.ones(len(C1))
+\end_layout
+
+\begin_layout Standard
+aux2 = agregacionC2*np.ones(len(C2))
+\end_layout
+
+\begin_layout Standard
+aux3 = agregacionC3*np.ones(len(C3))
+\end_layout
+
+\begin_layout Standard
+aux4 = agregacionD1*np.ones(len(D1))
+\end_layout
+
+\begin_layout Standard
+aux5 = agregacionD2*np.ones(len(D2))
+\end_layout
+
+\begin_layout Standard
+aux6 = agregacionD3*np.ones(len(D3))
+\end_layout
+
+\begin_layout Standard
+aux7 = agregacionD4*np.ones(len(D4))
+\end_layout
+
+\begin_layout Standard
+aux1 = agregacionC1*np.ones(len(C1))
+\end_layout
+
+\begin_layout Standard
+aux2 = agregacionC2*np.ones(len(C2))
+\end_layout
+
+\begin_layout Standard
+aux3 = agregacionC3*np.ones(len(C3))
+\end_layout
+
+\begin_layout Standard
+aux4 = agregacionD1*np.ones(len(D1))
+\end_layout
+
+\begin_layout Standard
+aux5 = agregacionD2*np.ones(len(D2))
+\end_layout
+
+\begin_layout Standard
+aux6 = agregacionD3*np.ones(len(D3))
+\end_layout
+
+\begin_layout Standard
+C1_r = np.minimum(C1,aux1)
+\end_layout
+
+\begin_layout Standard
+C2_r = np.minimum(C2,aux2)
+\end_layout
+
+\begin_layout Standard
+C3_r = np.minimum(C3,aux3)
+\end_layout
+
+\begin_layout Standard
+D1_r = np.minimum(D1,aux4)
+\end_layout
+
+\begin_layout Standard
+D2_r = np.minimum(D2,aux5)
+\end_layout
+
+\begin_layout Standard
+D3_r = np.minimum(D3,aux6)
+\end_layout
+
+\begin_layout Standard
+D4_r = np.minimum(D4,aux7)
+\end_layout
+
+\begin_layout Standard
+z_d = np.zeros((1,2))
+\end_layout
+
+\begin_layout Standard
+nume = 0
+\end_layout
+
+\begin_layout Standard
+deno = 0
+\end_layout
+
+\begin_layout Standard
+CT1 = np.maximum(C1_r,C2_r,C3_r)
+\end_layout
+
+\begin_layout Standard
+CT2 = np.maximum(np.maximum(D1_r,D2_r,D3_r),D4_r)
+\end_layout
+
+\begin_layout Standard
+for i in range(len(z1)):
+\end_layout
+
+\begin_layout Standard
+nume += CT1[i]*(i/10+15)
+\end_layout
+
+\begin_layout Standard
+deno += CT1[i]
+\end_layout
+
+\begin_layout Standard
+z_d[0,0] = nume/deno
+\end_layout
+
+\begin_layout Standard
+nume = 0
+\end_layout
+
+\begin_layout Standard
+deno = 0
+\end_layout
+
+\begin_layout Standard
+for i in range(len(z2)):
+\end_layout
+
+\begin_layout Standard
+nume += CT2[i]*i/100
+\end_layout
+
+\begin_layout Standard
+deno += CT2[i]
+\end_layout
+
+\begin_layout Standard
+z_d[0,1] = nume/deno
+\end_layout
+
+\begin_layout Standard
+return z_d
+\end_layout
+
+\begin_layout Standard
+for i in range(len(x)):
+\end_layout
+
+\begin_layout Standard
+for j in range(len(y)):
+\end_layout
+
+\begin_layout Standard
+CZ1[i,j] = difusificacion(i,j)[0][0]
+\end_layout
+
+\begin_layout Standard
+CZ2[i,j] = difusificacion(i,j)[0][1]
+\end_layout
+
+\begin_layout Standard
+fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
+\end_layout
+
+\begin_layout Standard
+ax.set_xlabel('Y')
+\end_layout
+
+\begin_layout Standard
+ax.set_ylabel('X')
+\end_layout
+
+\begin_layout Standard
+ax.set_zlabel('Z')
+\end_layout
+
+\begin_layout Standard
+surf = ax.plot_surface(X, Y, CZ1, cmap=cm.coolwarm,
+\end_layout
+
+\begin_layout Standard
+linewidth=0, antialiased=False)
+\end_layout
+
+\begin_layout Standard
+fig2, ax2 = plt.subplots(subplot_kw={"projection": "3d"})
+\end_layout
+
+\begin_layout Standard
+ax2.set_xlabel('Y')
+\end_layout
+
+\begin_layout Standard
+ax2.set_ylabel('X')
+\end_layout
+
+\begin_layout Standard
+ax2.set_zlabel('Z')
+\end_layout
+
+\begin_layout Standard
+surf = ax2.plot_surface(X, Y, CZ2, cmap=cm.coolwarm,
+\end_layout
+
+\begin_layout Standard
+linewidth=0, antialiased=False)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+Hojas técnicas Velocidad del aire – S&P.
+ (2015, 9 de junio).
+ Ventilation Systems – S&P.
+ https://www.solerpalau.com/es-es/hojas-tecnicas-velocidad-del-aire/
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+B.
+ Granados Rojas P.
+ N.
+ Cortez Herrera Y.
+ E.
+ González Navarro.
+ Cómo Diseñar un Sistema de Inferencia Difusa de Tipo Mamdani.
+ 1st.
+ La Laguna Ticomán, CDMX, MX: Boletín UPIITA, 2019.
+\end_layout
+
+\end_body
+\end_document
